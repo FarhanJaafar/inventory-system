@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header">List Inventori </div>
+                <div class="card-header">List Inventory </div>
                 
                 <div class="card-body">
                 <a href="{{route ('inventory.create')}}" button type="button" class="btn btn-success">Add inventori</button></a>
