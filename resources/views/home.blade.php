@@ -33,12 +33,15 @@
                 </thead>
                 <tbody>
                     @foreach($inventories as $key => $inventory)
-                    <tr>
-                    <th scope="row">{{$key +1}}</th>
-                    <td>{{$inventory->name}}</td>
-                    <td>{{$inventory->description}}</td>
-                    <td></td>
-                    </tr>
+                        <tr>
+                        <th scope="row">{{$key +1}}</th>
+                        <td>{{$inventory->name}}</td>
+                        <td>{{$inventory->description}}</td>
+                        <td>
+                            <a href="{{route ('inventory.edit', $inventory)}}" type="submit" name="edit" class="btn btn-warning">Edit</a>
+                            <a href="{{route ('inventory.delete', $inventory)}}" type="button" class="btn btn-danger">Delete</a>
+                        </td>
+                        </tr>
                     @endforeach
                 </tbody>
                 </table>
