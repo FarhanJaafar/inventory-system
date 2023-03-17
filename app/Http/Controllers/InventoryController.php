@@ -22,4 +22,28 @@ class InventoryController extends Controller
 
         return to_route('home');
     }
+
+    public function edit(Inventory $inventory)
+    {
+
+        return view('inventory.edit', compact('inventory'));
+    }
+
+    public function update(Request $request, Inventory $inventory)
+    {
+        $inventory->update([
+            'user_id' =>$inventory->user_id,
+            'name' =>$request->name,
+            'description'=>$request->description,
+        ]);
+
+        return to_route('home');
+    }
+
+    public function delete(Inventory $inventory)
+    {
+        $inventory->delete([]);
+
+        return to_route('home');
+    }
 }
