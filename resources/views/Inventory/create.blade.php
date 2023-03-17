@@ -21,8 +21,7 @@
                         <a href="{{route ('home')}}" type="button" class="btn btn-primary">Back</a>
                         <button type="submit" class="btn btn-primary">Add</button>
                     </div>
-                   
-                    </form>
+                </form>
                 </div>
             </div>
         </div>
