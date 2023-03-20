@@ -22,9 +22,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $inventories = Inventory::all();
+        if($request->keyword){
+            $inventories = auth()->user()->inventories()->where('name', 'LIKE', '%'.$request->keyword.'%')
+            ->paginate(3);
+            
+        }else{
+            $inventories = auth()->user()->inventories()->paginate(3);
+        }
         return view('home', compact ('inventories'));
+
     }
 }
