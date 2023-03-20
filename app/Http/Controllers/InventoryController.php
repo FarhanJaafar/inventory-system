@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Inventory;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreInventoryRequest;
 
 class InventoryController extends Controller
 {
@@ -12,7 +13,7 @@ class InventoryController extends Controller
         return view ("inventory.create");
     }
 
-    public function store(Request $request)
+    public function store(StoreInventoryRequest $request)
     {
         Inventory::create([
             'user_id' =>auth()->user()->id,
@@ -45,5 +46,5 @@ class InventoryController extends Controller
         $inventory->delete([]);
 
         return to_route('home');
-    }
+    }  
 }
