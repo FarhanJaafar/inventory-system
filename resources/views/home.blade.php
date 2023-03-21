@@ -18,6 +18,15 @@
                     </div>
                 </div>
                 <br>
+                <div class="card mt-2">
+              <div class="card-header">Type Inventory</div>
+              <div class="card-body">
+                <div class="input-group mt-2 p-2">
+                  <a href="{{ route('inventorytype.index') }}" type="button" class="btn btn-dark">Go to Inventory Type</a>
+                </div>
+              </div>
+            </div>
+            <br>
                 <div class="card">
                     <div class="card-header">List Inventory </div>
                     <form method="" action="">
@@ -35,6 +44,7 @@
                             <th scope="col">No</th>
                             <th scope="col">Name</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -44,6 +54,7 @@
                                 <th scope="row">{{$key +1}}</th>
                                 <td>{{$inventory->name}}</td>
                                 <td>{{$inventory->description}}</td>
+                                <td>{{$inventory->inventoryType->name}}</td>
                                 <td>
                                     <a href="{{route ('inventory.edit', $inventory)}}" type="submit" name="edit" class="btn btn-warning">Edit</a>
                                     <a href="{{route ('inventory.delete', $inventory)}}" type="button" class="btn btn-danger">Delete</a>
