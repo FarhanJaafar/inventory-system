@@ -31,9 +31,9 @@ class StoreInventoryRequest extends FormRequest
     {
         return [
             'name.required' => 'Sila isi nama',
-            'name.min' => 'Sila isi panjang nama melebihi 5 patah perkataan',
+            'name.min' => 'Sila isi panjang nama melebihi 5 huruf',
             'description.required' => 'Sila isi description',
-            'description.min' => 'Sila isi panjang description melebihi 10 patah perkataan'
+            'description.min' => 'Sila isi panjang description melebihi 10 huruf'
         ];
     }
 }
