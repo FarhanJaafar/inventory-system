@@ -18,17 +18,28 @@
                     @endif
                 <form method="POST" action="{{route ('inventory.store')}}">
                         @csrf
+                        <div class="mb-3">
+                            <label for="exampleFormControlSelect1">Type Inventory</label>
+                            <select class="form-control" name="inventory_type_id">
+                            @foreach ($inventoryTypes as $inventoryType)
+                                <option value = "{{$inventoryType->id}}">{{$inventoryType->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nama Inventori</label>
+                        <label for="exampleFormControlInput1" class="form-label">Name Inventory</label>
                         <input type="text" class="form-control" name="name">
                         </div>
                         <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Detail Inventori</label>
+                        <label for="exampleFormControlTextarea1" class="form-label">Detail Inventory</label>
                         <textarea class="form-control" rows="3" name="description"></textarea>
-
-                        <a href="{{route ('home')}}" type="button" class="btn btn-primary">Back</a>
-                        <button type="submit" class="btn btn-primary">Add</button>
+                        <label for="exampleFormControlInput2" class="form-label">Color Inventory</label>
+                        <input type="text" class="form-control" name="color">
+                        <label for="exampleFormControlInput3" class="form-label">Quantity</label>
+                        <input type="text" class="form-control" name="quantity">
                     </div>
+                    <a href="{{route ('home')}}" type="button" class="btn btn-primary">Back</a>
+                        <button type="submit" class="btn btn-primary">Add</button>
                 </form>
                 </div>
             </div>
