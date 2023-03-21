@@ -12,12 +12,11 @@
                         @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nama Inventori</label>
-                        <input type="text" class="form-control" name="name">
+                        <input type="text" class="form-control" name="name" placeholder="{{$inventory->name}}">
                         </div>
                         <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detail Inventori</label>
-                        <textarea class="form-control" rows="3" name="description"></textarea>
-
+                        <textarea class="form-control" rows="3" name="description" placeholder="{{$inventory->description}}"></textarea>
                         <a href="{{route ('home')}}" type="button" class="btn btn-primary">Back</a>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
