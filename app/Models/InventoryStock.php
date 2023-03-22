@@ -15,4 +15,9 @@ class InventoryStock extends Model
         'color',
         'quantity',
     ];
+
+    public function inventory()
+    {
+        return $this->hasOne(Inventory::class);
+    }
 }
