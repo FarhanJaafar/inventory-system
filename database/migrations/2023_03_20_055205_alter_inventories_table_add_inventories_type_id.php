@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('inventories',function(Blueprint $table){
             $table->unsignedInteger('inventory_type_id')->after('user_id');
 
-            $table->foreign('inventory_type_id')->references('id')->on('inventory_types');
+            $table->foreign('inventory_type_id')->references('id')->on('inventory_types')->onDelete('cascade');
         });
     }
 
