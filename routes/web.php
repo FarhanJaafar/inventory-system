@@ -28,6 +28,7 @@ Route::get('/Inventory/edit/{inventory}', [App\Http\Controllers\InventoryControl
 Route::post('/Inventory/update/{inventory}', [App\Http\Controllers\InventoryController::class, 'update'])->name('inventory.update');
 Route::get('/Inventory/delete/{inventory}', [App\Http\Controllers\InventoryController::class, 'delete'])->name('inventory.delete');
 Route::get('/Inventory/search', [App\Http\Controllers\InventoryController::class, 'search'])->name('inventory.search');
+Route::get('/Inventory/show/{inventory}', [App\Http\Controllers\InventoryController::class, 'show'])->name('inventory.show');
 
 Route::get('/InventoryType/index', [App\Http\Controllers\InventoryTypeController::class, 'index'])->name('inventorytype.index');
 Route::get('/InventoryType/create', [App\Http\Controllers\InventoryTypeController::class, 'create'])->name('inventorytype.create');
