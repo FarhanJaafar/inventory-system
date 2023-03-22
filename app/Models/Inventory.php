@@ -29,6 +29,6 @@ class Inventory extends Model
 
     public function inventoryStock()
     {
-        return this->hasMany(InventoryStock::class);
+        return $this->hasMany(InventoryStock::class);
     }
 }
