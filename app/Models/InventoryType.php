@@ -13,8 +13,8 @@ class InventoryType extends Model
         'name',
     ];
 
-    public function inventory()
+    public function inventories()
     {
-        return $this->hasOne(Inventory::class);
+        return $this->hasMany(Inventory::class);
     }
 }
